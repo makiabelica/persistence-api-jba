@@ -7,6 +7,6 @@
 
     <persistence-unit name="EstudianteUP" transaction-type="JTA">
         <jta-data-source>jdbc/estudianteBD</jta-data-source>
-
     </persistence-unit>
+
 </persistence>

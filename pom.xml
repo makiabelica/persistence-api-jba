@@ -14,8 +14,16 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
+        <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/test?useSSL=false&amp;useTimezone=true&amp;serverTimezone=UTC" />
+        <property name="javax.persistence.jdbc.user" value="root" />
+        <property name="javax.persistence.jdbc.password" value="admin" />
+        <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.MysqlDataSource" />
+        <property name="eclipselink.logging.level.sql" value="FINE" />
+        <property name="eclipselink.loggin.parameters" value="true" />
 
     </properties>
+
+
 
     <dependencies>
         <dependency>
