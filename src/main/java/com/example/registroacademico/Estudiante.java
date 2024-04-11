@@ -4,24 +4,23 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @NamedQueries({
-        @NamedQuery(name = "Estidiante.findAll", query = "SELECT e FROM e ORDER BY e.carnet")
+        @NamedQuery(name = "Estudiante.findAll", query = "SELECT e FROM Estudiante e")
 })
-
 @Entity
 public class Estudiante implements Serializable {
     private  static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int idestudiante;
     private String carnet;
 
-    public int getId() {
-        return id;
+    public int getIdestudiante() {
+        return idestudiante;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdestudiante(int id) {
+        this.idestudiante = id;
     }
 
     public String getCarnet() {
@@ -32,22 +31,22 @@ public class Estudiante implements Serializable {
         this.carnet = carnet;
     }
 
-    public String getNombres() {
-        return nombres;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
+    public void setNombre(String nombres) {
+        this.nombre = nombres;
     }
 
-    public String getApellidos() {
-        return apellidos;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public void setApellido(String apellidos) {
+        this.apellido = apellidos;
     }
 
-    private String nombres;
-    private String apellidos;
+    private String nombre;
+    private String apellido;
 }

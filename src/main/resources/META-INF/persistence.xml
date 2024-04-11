@@ -6,7 +6,7 @@
              version="2.2" >
 
     <persistence-unit name="EstudianteUP" transaction-type="JTA">
-        <jta-data-source>jdbc/estudianteBD</jta-data-source>
+        <jta-data-source>registroDB</jta-data-source>
     </persistence-unit>
 
 </persistence>

@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
 @Stateless
@@ -14,34 +15,35 @@ public class EstudianteDaoImp implements  IEstudianteDao {
     EntityManager em;
 
 
-    @Override
+
     public List<Estudiante> buscarTodosEstudiante() {
-        return em.createNamedQuery("Estudiante.findAll").getResultList();
+        TypedQuery<Estudiante> q = em.createQuery("SELECT e FROM Estudiante e ORDER BY e.idestudiante", Estudiante.class);
+        return q.getResultList();
     }
 
-    @Override
+
     public Estudiante buscarEstudiantePorId(Estudiante estudiante) {
-        return em.find(Estudiante.class, estudiante.getId());
+        return em.find(Estudiante.class, estudiante.getIdestudiante());
     }
 
-    @Override
+
     public Estudiante buscarEstudiantePorCarnet(Estudiante estudiante) {
-        Query q = em.createNamedQuery("from Estudiante e where e.carnet: carnet");
+        Query q = em.createQuery("select e from Estudiante e where e.carnet = :carnet");
         q.setParameter("carnet", estudiante.getCarnet());
         return (Estudiante) q.getSingleResult();
     }
 
-    @Override
+
     public void insertEstudiante(Estudiante estudiante) {
         em.persist(estudiante);
     }
 
-    @Override
+
     public void modificarEstudiante(Estudiante estudiante) {
         em.merge(estudiante);
     }
 
-    @Override
+
     public void eliminarEstudiante(Estudiante estudiante) {
         em.remove(em.merge(estudiante));
     }

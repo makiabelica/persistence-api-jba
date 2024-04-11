@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/estudiante")
+@WebServlet("/estudiantes")
 public class EstudianteServlet extends HttpServlet {
 
     @Inject
@@ -23,7 +23,7 @@ public class EstudianteServlet extends HttpServlet {
         throws ServletException, IOException {
         List<Estudiante> estudiantes = iEstudianteService.buscarTodoEstudiante();
         System.out.println("estudiantes: " + estudiantes);
-        request.setAttribute("estudiante", estudiantes);
+        request.setAttribute("estudiantes", estudiantes);
         request.getRequestDispatcher("/listadoEstudiante.jsp").forward(request,response);
     }
 }
