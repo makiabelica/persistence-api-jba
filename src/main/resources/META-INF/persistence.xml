@@ -5,8 +5,10 @@
                                  http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
              version="2.2" >
 
-    <persistence-unit name="EstudianteUP" transaction-type="JTA">
-        <jta-data-source>registroDB</jta-data-source>
+    <persistence-unit name="EstudiantePU" transaction-type="JTA">
+        <jta-data-source>EstudiantePU</jta-data-source>
     </persistence-unit>
 
 </persistence>
+
+<!--registroDB-->

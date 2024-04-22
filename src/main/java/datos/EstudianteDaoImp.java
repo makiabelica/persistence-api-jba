@@ -11,7 +11,7 @@ import java.util.List;
 
 @Stateless
 public class EstudianteDaoImp implements  IEstudianteDao {
-    @PersistenceContext(unitName = "EstudianteUP")
+    @PersistenceContext(unitName = "EstudiantePU")
     EntityManager em;
 
 
